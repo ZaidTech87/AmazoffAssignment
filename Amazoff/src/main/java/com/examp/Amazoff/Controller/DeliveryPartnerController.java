@@ -12,7 +12,8 @@ public class DeliveryPartnerController {
     @Autowired
     DeliveryPartner deliveryPartnerService;
     public String addDeleveryPartner(@RequestBody DeliveryPartner deliveryPartner) {
-        String responce = deliveryPartnerService.addDeliveryPartner(deliveryPartner);
+        String responce = deliveryPartnerService.addDeliveryPartnerId(deliveryPartner);
         return responce;
     }
+
 }

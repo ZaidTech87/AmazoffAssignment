@@ -2,19 +2,19 @@ package com.examp.Amazoff.modelClass;
 
 public class DeliveryPartner {
 
-    private String delivery_status;
+    private String deliveryPartnerId;
     private String name;
     private String contact;
     public DeliveryPartner(String delivery_status, String name, String contact) {
-        this.delivery_status = delivery_status;
+        this.deliveryPartnerId = deliveryPartnerId;
         this.name = name;
         this.contact = contact;
     }
-    public String getDelivery_status() {
-        return delivery_status;
+    public String getDeliveryPartnerId() {
+        return deliveryPartnerId;
     }
-    public void setDelivery_status(String delivery_status) {
-        this.delivery_status = delivery_status;
+    public void setdeleveyPartnerId(String deliveryPartnerId) {
+        this.deliveryPartnerId = deliveryPartnerId;
     }
     public String getName() {
         return name;
