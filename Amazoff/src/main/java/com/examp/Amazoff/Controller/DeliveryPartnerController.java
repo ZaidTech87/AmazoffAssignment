@@ -1,19 +1,25 @@
 package com.examp.Amazoff.Controller;
 
+import com.examp.Amazoff.Service.DeliveryPartnerService;
 import com.examp.Amazoff.modelClass.DeliveryPartner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/deleveryPartnerController")
+@RequestMapping("/deliveryPartnerController")
 public class DeliveryPartnerController {
-    @Autowired
-    DeliveryPartner deliveryPartnerService;
-    public String addDeleveryPartner(@RequestBody DeliveryPartner deliveryPartner) {
-        String responce = deliveryPartnerService.addDeliveryPartnerId(deliveryPartner);
+   @Autowired
+    DeliveryPartnerService deliveryPartnerService;
+   @PostMapping("/addDeliveryPartner")
+    public String addDeliveryPartner(@RequestBody DeliveryPartner deliveryPartner) {
+        String responce = deliveryPartnerService.addDeliveryPartner(deliveryPartner);
         return responce;
+    }
+    @GetMapping("/getPartnerById")
+    public DeliveryPartner getDeliveryPartnerById(@RequestParam  String deliveryPartnerId) {
+       DeliveryPartner deliveryPartner = deliveryPartnerService.getDeliveryPartnerById(deliveryPartnerId);
+       return deliveryPartner;
+
     }
 
 }

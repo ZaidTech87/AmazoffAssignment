@@ -15,4 +15,14 @@ public class OrderService {
         return response;
 
     }
+
+    public String assignOrdertoDeliveryParter(String deliveryPartnerId,String orderId){
+       String responce = orderReposatory.assignOrdertoDeliveryPartner(deliveryPartnerId,orderId);
+       return responce;
+    }
+
+ public  Order getOrderbyId(String orderId){
+        Order order1 = orderReposatory.getOrderbyId(orderId);
+        return order1;
+ }
 }
