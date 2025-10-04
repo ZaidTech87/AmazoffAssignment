@@ -4,7 +4,9 @@ import com.examp.Amazoff.modelClass.Order;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Repository
 public class OrderReposatory {
@@ -32,5 +34,25 @@ public class OrderReposatory {
         Order order = ordersDb.get(orderId);
         return order;
     }
+
+    public int getOrderAssignByDeliveryPartner(String deliveryPartnerId) {
+         // create a new list each call
+        int count = 0;
+        for (Order ob : ordersDb.values()) {
+            if (deliveryPartnerId.equals(ob.getDeliveryPartnerId())) { // safer null check
+               count++; // add actual order ID
+            }
+        }
+        return count;
+    }
+    public List<Order> listAllOrder(){
+        List<Order> orders = new ArrayList<>();
+        for (Order ob : ordersDb.values()) {
+            orders.add(ob);
+        }
+        return orders;
+    }
+
+
 
 }

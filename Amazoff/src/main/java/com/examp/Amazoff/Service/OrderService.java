@@ -5,6 +5,9 @@ import com.examp.Amazoff.modelClass.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 
 public class OrderService {
@@ -24,5 +27,15 @@ public class OrderService {
  public  Order getOrderbyId(String orderId){
         Order order1 = orderReposatory.getOrderbyId(orderId);
         return order1;
+ }
+
+ public int getOrderAssignByDeliveryPartner(String deliveryPartnerId){
+//        List<String> responce = orderReposatory.getOrderAssignByDeliveryPartner(deliveryPartnerId);
+//        return responce;
+     return orderReposatory.getOrderAssignByDeliveryPartner(deliveryPartnerId);
+ }
+
+ public List<Order>listAllOrder(){
+        return orderReposatory.listAllOrder();
  }
 }

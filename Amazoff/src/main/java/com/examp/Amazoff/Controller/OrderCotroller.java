@@ -6,6 +6,9 @@ import com.examp.Amazoff.modelClass.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/orderController")
@@ -28,6 +31,21 @@ import org.springframework.web.bind.annotation.*;
     public Order getOrderbyId(@RequestParam String orderId) {
         Order order = orderService.getOrderbyId(orderId);
         return order;
+
+    }
+
+    @GetMapping("getOrderAssignByDeliveryPartner")
+    public int getOrderAssignByDeliveryPartner(@RequestParam String deliveryPartnerId) {
+
+//        List<String>responce = orderService.getOrderAssignByDeliveryPartner(deliveryPartnerId);
+//
+        return  orderService.getOrderAssignByDeliveryPartner(deliveryPartnerId);
+
+    }
+
+    @GetMapping("/listAllOrder")
+    public List<Order> listAllOrder() {
+        return orderService.listAllOrder();
 
     }
 
