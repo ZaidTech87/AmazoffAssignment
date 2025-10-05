@@ -22,4 +22,5 @@ public class DeliveryPartnerService {
         return deliveryPartner;
     }
 
+
 }

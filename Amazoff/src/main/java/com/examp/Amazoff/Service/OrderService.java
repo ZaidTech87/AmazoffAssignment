@@ -44,4 +44,7 @@ public class OrderService {
         return orderReposatory.getUndeliverdOrders(deliveryPartnerId,delivery_staus);
     }
 
+    public  Double getLastDeliveryTime (@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
+        return orderReposatory.getLastDeliveryTime(deliveryPartnerId,delivery_staus);
+    }
 }

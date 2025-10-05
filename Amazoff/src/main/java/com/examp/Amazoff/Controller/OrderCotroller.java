@@ -52,6 +52,9 @@ import java.util.List;
     public List<Order> getUndeliverdOrders(@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
         return orderService.getUndeliverdOrders(deliveryPartnerId,delivery_staus);
     }
-
+@GetMapping("/lastDeliveryTime")
+    public Double getLastDeliveryTime(@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
+        return orderService.getLastDeliveryTime(deliveryPartnerId,delivery_staus);
+}
 
 }
