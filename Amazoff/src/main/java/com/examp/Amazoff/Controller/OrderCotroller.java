@@ -48,7 +48,10 @@ import java.util.List;
         return orderService.listAllOrder();
 
     }
-
+    @GetMapping("/undeliverdOrders")
+    public List<Order> getUndeliverdOrders(@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
+        return orderService.getUndeliverdOrders(deliveryPartnerId,delivery_staus);
+    }
 
 
 }

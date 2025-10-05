@@ -5,6 +5,8 @@ import com.examp.Amazoff.modelClass.DeliveryPartner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/deliveryPartnerController")
 public class DeliveryPartnerController {
@@ -21,5 +23,6 @@ public class DeliveryPartnerController {
        return deliveryPartner;
 
     }
+
 
 }

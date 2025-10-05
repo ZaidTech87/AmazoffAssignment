@@ -1,9 +1,11 @@
 package com.examp.Amazoff.Service;
 
 import com.examp.Amazoff.Reposatory.OrderReposatory;
+import com.examp.Amazoff.modelClass.DeliveryPartner;
 import com.examp.Amazoff.modelClass.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,4 +40,8 @@ public class OrderService {
  public List<Order>listAllOrder(){
         return orderReposatory.listAllOrder();
  }
+    public List<Order> getUndeliverdOrders( String deliveryPartnerId,String delivery_staus) {
+        return orderReposatory.getUndeliverdOrders(deliveryPartnerId,delivery_staus);
+    }
+
 }

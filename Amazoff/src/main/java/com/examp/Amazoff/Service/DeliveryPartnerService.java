@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Service
 public class DeliveryPartnerService {
    @Autowired
@@ -15,7 +17,7 @@ public class DeliveryPartnerService {
         return responce;
     }
 
-    public DeliveryPartner getDeliveryPartnerById(@RequestParam String deliveryPartnerId) {
+    public DeliveryPartner getDeliveryPartnerById( String deliveryPartnerId) {
         DeliveryPartner deliveryPartner = deliveryPartnerReposatory.getDeliveryPartnerById(deliveryPartnerId);
         return deliveryPartner;
     }
