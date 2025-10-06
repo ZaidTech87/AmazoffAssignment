@@ -73,14 +73,34 @@ public class OrderReposatory {
     public Double getLastDeliveryTime(@RequestParam String deliveryPartnerId, @RequestParam String delivery_staus) {
         Double lastDeliveryTime = null;
         for (Order ob : ordersDb.values()) {
-            if (ob.getDeliveryPartnerId().equals(deliveryPartnerId) && ob.getDelivery_status().equals(delivery_staus)) {
+            if (ob.getDeliveryPartnerId().equals(deliveryPartnerId)
+                    && ob.getDelivery_status().equals(delivery_staus)) {
                 Double time = Double.parseDouble(ob.getDelivery_time());
-                if (time > lastDeliveryTime) {
+                if (lastDeliveryTime == null || time > lastDeliveryTime) {
                     lastDeliveryTime = time;
                 }
             }
         }
- return lastDeliveryTime;
+        return lastDeliveryTime;
+    }
+    public String unassignOrder(@RequestParam String key) {
+        for(Order ob : ordersDb.values()){
+            if(ob.getOrderId().equals(key)){
+                ob.setDelivery_status("pending");
 
+            }
+        }
+        return "order" + key + "unassigned";
+
+    }
+
+    public String deleteOrder(String orderId) {
+        for(String key : ordersDb.keySet()){
+            if(key.equals(orderId)){
+                ordersDb.remove(key);
+                return "order" + orderId + "deleted";
+            }
+        }
+        return "order not found";
     }
 }

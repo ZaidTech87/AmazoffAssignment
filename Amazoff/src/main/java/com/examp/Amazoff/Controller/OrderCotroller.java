@@ -56,5 +56,8 @@ import java.util.List;
     public Double getLastDeliveryTime(@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
         return orderService.getLastDeliveryTime(deliveryPartnerId,delivery_staus);
 }
-
+@DeleteMapping("/deleteOrder")
+    public String deleteOrder(@RequestParam String orderId) {
+        return orderService.deleteOrder(orderId);
+}
 }

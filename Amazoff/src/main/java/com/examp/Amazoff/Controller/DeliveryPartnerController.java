@@ -23,6 +23,10 @@ public class DeliveryPartnerController {
        return deliveryPartner;
 
     }
+    @DeleteMapping("/getDeletionOfPartnerObject")
+    public String deleteDeliveryPartner(@RequestParam String deliveryPartnerId) {
+       return deliveryPartnerService.deleteDeliveryPartner(deliveryPartnerId);
+    }
 
 
 }

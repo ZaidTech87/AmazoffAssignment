@@ -47,4 +47,9 @@ public class OrderService {
     public  Double getLastDeliveryTime (@RequestParam String deliveryPartnerId,@RequestParam String delivery_staus) {
         return orderReposatory.getLastDeliveryTime(deliveryPartnerId,delivery_staus);
     }
+
+
+    public String deleteOrder(String orderId){
+        return orderReposatory.deleteOrder(orderId);
+    }
 }

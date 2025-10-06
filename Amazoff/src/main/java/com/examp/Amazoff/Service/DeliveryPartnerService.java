@@ -21,6 +21,9 @@ public class DeliveryPartnerService {
         DeliveryPartner deliveryPartner = deliveryPartnerReposatory.getDeliveryPartnerById(deliveryPartnerId);
         return deliveryPartner;
     }
+    public String deleteDeliveryPartner(@RequestParam String deliveryPartnerId) {
+        return deliveryPartnerReposatory.deleteDeliveryPartner(deliveryPartnerId);
+    }
 
 
 }
